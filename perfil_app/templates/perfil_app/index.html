@@ -1,0 +1,222 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Perfil Profesional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --rosa-claro: #ffebf1da;
+            --rosa-medio: #f486ab;
+            --rosa-principal: #9c3356;
+            --rosa-oscuro: #c2185b;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--rosa-claro);
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .perfil-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 16px;
+            max-width: 1280px;
+            margin: 40px auto 20px auto;
+            box-shadow: 0 8px 16px rgba(240, 92, 153, 0.15);
+        }
+
+        .perfil-foto {
+            flex: 1;
+            text-align: center;
+        }
+
+        .perfil-foto img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .perfil-texto {
+            flex: 2;
+            max-width: 500px;
+        }
+
+        .perfil-texto h1 {
+            font-size: 30px;
+            font-weight: bold;
+            color: var(--rosa-oscuro);
+            margin-bottom: 10px;
+        }
+
+        .perfil-texto p, .perfil-texto ul {
+            font-size: 16px;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        .perfil-texto ul {
+            padding-left: 20px;
+        }
+
+        .informacion {
+            flex: 2;
+            max-width: 400px;
+        }
+
+        .informacion p {
+            font-size: 16px;
+            margin: 8px 0;
+        }
+
+        .informacion p i {
+            margin-right: 8px;
+            color: var(--rosa-principal);
+        }
+
+        .link-azul {
+            color: #203df4;
+            text-decoration: none;
+        }
+
+        .link-azul:hover {
+            text-decoration: underline;
+        }
+
+        .botones-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .boton-vertical {
+            display: block;
+            padding: 12px 0;
+            font-size: 16px;
+            color: white;
+            background-color: var(--rosa-principal);
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(236, 64, 122, 0.3);
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-decoration: none;
+        }
+
+        .boton-vertical:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 10px rgba(236, 64, 122, 0.4);
+        }
+
+        .secciones-columnas {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+            margin: 40px auto;
+            max-width: 1280px;
+        }
+
+        .seccion-columna {
+            flex: 1;
+            min-width: 250px;
+            background-color: white;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 8px 16px rgba(240, 92, 153, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .seccion-columna:hover {
+            transform: translateY(-5px);
+        }
+
+        .seccion-columna h2 {
+            font-size: 22px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .seccion-columna ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .seccion-columna li {
+            font-size: 16px;
+            margin-bottom: 6px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="perfil-container">
+    <div class="perfil-foto">
+        <img src="{% static 'perfil/mi_foto2.jpg' %}" alt="Foto de perfil">
+    </div>
+
+    <div class="perfil-texto">
+        <h1>Karla Itzel Salado Chávez</h1>
+        <p><strong>Ingeniera en Mecatrónica con Maestría en Robótica</strong>, con experiencia en:</p>
+        <ul>
+            <li><strong>Inteligencia Artificial:</strong> redes neuronales (CNN), aprendizaje por refuerzo (RL), clasificación de imágenes</li>
+            <li><strong>Robótica:</strong> navegación autónoma, SLAM, control y planificación de trayectorias</li>
+            <li><strong>Mecatrónica:</strong> integración de sensores (LiDAR, IMUs), sistemas embebidos, adquisición de datos en tiempo real</li>
+        </ul>
+        <p>Familiaridad con frameworks como TensorFlow, PyTorch, Keras y herramientas de visión computacional (OpenCV). Nivel de inglés técnico: intermedio-avanzado.</p>
+    </div>
+
+    <div class="informacion">
+        <p><i class="fas fa-map-marker-alt"></i><strong>Ubicación:</strong> CDMX, México</p>
+        <p><i class="fas fa-phone"></i><strong>Teléfono:</strong> +52 9581000385</p>
+        <p><i class="fab fa-github"></i><strong>GitHub:</strong> <a class="link-azul" href="https://github.com/itzchav" target="_blank">github.com/itzchav</a></p>
+        <p><i class="fab fa-linkedin"></i><strong>LinkedIn:</strong> <a class="link-azul" href="https://www.linkedin.com/in/karla-salado/" target="_blank">in/karla-salado</a></p>
+        <div class="botones-container">
+            <a href="{% static 'perfil/cv_karla_4.pdf' %}" class="boton-vertical" target="_blank">📄 Ver CV</a>
+            <a href="{% url 'publicaciones' %}" class="boton-vertical">📘 Publicaciones</a>
+            <a href="{% url 'tesis' %}" class="boton-vertical">🛠 Tesis</a>
+            <a href="{% url 'redes' %}" class="boton-vertical">🛠 Proyectos</a>
+        </div>
+    </div>
+</div>
+
+<div class="secciones-columnas">
+    <div class="seccion-columna">
+        <h2><i class="fas fa-graduation-cap"></i> Educación</h2>
+        <ul>
+            <li><strong>Maestría en Robótica (2024):</strong><br> Universidad Tecnológica de la Mixteca</li>
+            <li><strong>Ingeniería en Mecatrónica (2022):</strong><br> Universidad Tecnológica de la Mixteca</li>
+        </ul>
+    </div>
+    <div class="seccion-columna">
+        <h2><i class="fas fa-language"></i> Idiomas</h2>
+        <ul>
+            <li><strong>Español:</strong> Nativo</li>
+            <li><strong>Inglés:</strong> Intermedio-avanzado (lectura técnica)</li>
+        </ul>
+    </div>
+    <div class="seccion-columna">
+        <h2><i class="fas fa-tools"></i> Habilidades Técnicas</h2>
+        <ul>
+            <li>Python, C, MATLAB</li>
+            <li>TensorFlow, Keras, PyTorch</li>
+            <li>OpenCV, SLAM, CNNs</li>
+            <li>Sistemas embebidos y sensores LiDAR, IMUs</li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predicción de Dígitos</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', sans-serif;
+            background-image: url("{% static 'background.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            text-align: center;
+            color: white;
+        }
+
+        h1 {
+            margin-top: 80px;
+            font-size: 40px;
+        }
+
+        .upload-container {
+            background-color: rgba(253, 254, 255, 0.728);
+            color: #000;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            margin-top: 50px;
+        }
+
+        /* Oculta el input real */
+input[type="file"] {
+    display: none;
+}
+
+/* Botón personalizado para seleccionar archivo */
+.custom-file-upload {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.custom-file-upload:hover {
+    background-color: #010a10;
+}
+
+
+        button {
+            background-color: #ed0101;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #ed0404;
+        }
+
+        .result-container {
+            margin-top: 35px;
+        }
+
+        .predicted-digit {
+            font-size: 20px;
+            font-weight: bold;
+            background: #00000a;
+            color: white;
+            max-width: 170px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 10px auto; /* esto centra horizontalmente */
+            display: block;
+        }
+
+        img.preview {
+            margin-top: 10px;
+            max-width: 170px;
+            border-radius: 10px;
+            border: 2px solid white;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Predicción de Dígitos</h1>
+
+    <div class="upload-container">
+        <h2>Sube una imagen de un número (0-9)</h2>
+        <form method="post" enctype="multipart/form-data">
+            
+                {% csrf_token %}
+            
+                <label for="file-upload" class="custom-file-upload">
+                    Seleccionar imagen
+                </label>
+                <input id="file-upload" type="file" name="digit" required>
+                
+                <button type="submit">Predecir</button>
+            
+            
+        </form>
+
+        {% if uploaded_file_url %}
+            <div class="result-container">
+                <h3>Imagen subida:</h3>
+                <img src="{{ uploaded_file_url }}?v={{ predicted_digit }}" class="preview" alt="Imagen subida">
+
+                <div class="predicted-digit">
+                    Predicción: {{ predicted_digit }}
+                </div>
+            </div>
+        {% endif %}
+    </div>
+
+</body>
+</html>

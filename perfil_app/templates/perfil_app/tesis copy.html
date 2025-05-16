@@ -1,0 +1,158 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>📘 Publicaciones - Karla Salado</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 30px 60px;
+      max-width: 1300px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+      color: #0056b3;
+      margin-bottom: 40px;
+    }
+
+    .publicacion {
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
+      padding: 20px;
+    }
+
+    .titulo {
+      font-size: 1.4em;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .galeria {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: flex-start;
+      margin: 15px 0;
+    }
+
+    .galeria img {
+      width: 22%;
+      max-height: 180px;
+      object-fit: contain;
+      border-radius: 6px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+
+    .descripcion {
+      font-size: 1em;
+      color: #555;
+      margin: 10px 0;
+    }
+
+    .herramientas {
+      font-size: 0.95em;
+      color: #777;
+    }
+
+    .enlace-info {
+      margin-top: 10px;
+      display: inline-block;
+      background-color: #0077cc;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 0.95em;
+    }
+
+    .enlace-info:hover {
+      background-color: #005fa3;
+    }
+
+    .volver {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .volver a {
+      text-decoration: none;
+      color: #0056b3;
+    }
+
+    .volver a:hover {
+      text-decoration: underline;
+    }
+
+    @media screen and (max-width: 768px) {
+      .galeria img {
+        width: 100%;
+        max-height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<h1>📘 Trabajos de tesis</h1>
+
+<!-- Publicación ejemplo -->
+<div class="publicacion">
+  <div class="titulo">Navegación autónoma de robot móvil en configuración diferencial usando sensor LiDAR</div>
+
+  <div class="galeria">
+    <img src="{% static 'perfil/nav1.png' %}" alt="Imagen 1">
+    <img src="{% static 'perfil/nav2.png' %}" alt="Imagen 2">
+    <img src="{% static 'perfil/nav3.png' %}" alt="Imagen 3">
+    <img src="{% static 'perfil/nav4.png' %}" alt="Imagen 4">
+  </div>
+
+  <div class="descripcion">
+    Implementación de un sistema de navegación autónoma en entornos desconocidos, combinando técnicas de SLAM con enfoques de navegación offline y online. En la navegación offline, se generó un mapa previo y se planificaron trayectorias mediante PRM, seguidas con control cinemático y optimizadas con Aprendizaje por Refuerzo (RL). En la navegación online, se aplicó SLAM incremental y planificación dinámica, permitiendo al robot adaptarse en tiempo real al entorno mediante PRM parcial y RL con submetas.
+
+
+  </div>
+
+  <div class="herramientas">
+    🔧 PRM, SLAM, ROS, Python, LiDAR
+  </div>
+
+  <a href="https://github.com/itzchav/Navegacion-SLAM-RL" class="enlace-info" target="_blank">🔗 GitHub</a>
+</div>
+<!-- Publicación ejemplo -->
+<div class="publicacion">
+  <div class="titulo">Desarrollo de una plataforma experimental para la implementación de absorbedores de vibraciones
+</div>
+
+  <div class="galeria">
+    <img src="{% static 'perfil/vib1.png' %}" alt="Imagen 1">
+    <img src="{% static 'perfil/vib2.png' %}" alt="Imagen 2">
+    <img src="{% static 'perfil/vib3.png' %}" alt="Imagen 3">
+    <img src="{% static 'perfil/vib4.png' %}" alt="Imagen 4">
+  </div>
+
+  <div class="descripcion">
+    Diseño y construcción de una plataforma experimental con tres configuraciones mecánicas (empotramiento simple y doble) para evaluar sistemas de absorción de vibraciones. Se integró un sistema electrónico con adquisición de datos mediante sensores IMU (MPU-6050) vía I2C y comunicación UART. Se desarrolló una interfaz de usuario y se lograron niveles de absorción de hasta el 90%, permitiendo validar la efectividad de diferentes configuraciones de absorbedores.
+
+
+  </div>
+
+  <div class="herramientas">
+    🔧 SolidWorks, Arduino, Matlab, IMU
+  </div>
+
+  <a href="http://jupiter.utm.mx/%7Etesis_dig/14519.pdf" class="enlace-info" target="_blank">🔗 Enlace</a>
+</div>
+<div class="volver">
+  <a href="/">← Volver al perfil</a>
+</div>
+
+</body>
+</html>

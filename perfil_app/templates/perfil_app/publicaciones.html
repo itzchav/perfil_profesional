@@ -1,0 +1,173 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>📘 Publicaciones - Karla Salado</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #0056b3;
+    }
+
+    .publicacion {
+      display: flex;
+      flex-wrap: wrap;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+
+    .imagen {
+      flex: 1;
+      max-width: 200px;
+      overflow: hidden;
+    }
+
+    .imagen img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .contenido {
+      flex: 2;
+      padding: 15px;
+    }
+
+    .contenido h3 {
+      margin-top: 0;
+    }
+
+    .herramientas {
+      font-size: 0.9em;
+      color: #555;
+      margin-top: 10px;
+    }
+
+    .doi {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f1f1f1;
+      font-size: 0.9em;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .doi a {
+      color: #0077cc;
+      text-decoration: none;
+    }
+
+    .volver {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .volver a {
+      text-decoration: none;
+      color: #0056b3;
+    }
+
+    .volver a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📘 Publicaciones Académicas</h1>
+
+  <!-- Publicación 1 -->
+  <div class="publicacion">
+    <div class="imagen">
+      <img src="{% static 'perfil/mapas_p2.png' %}" alt="Imagen PRM-SLAM">
+    </div>
+    <div class="contenido">
+      <h3>03/2025: Navegación Autónoma en Línea: Integración de PRM y SLAM en Entornos Desconocidos</h3>
+      <p>Estudio de técnicas combinadas de planificación de rutas (PRM) y mapeo en tiempo real (SLAM) para entornos no mapeados previamente, evaluando precisión y eficiencia.</p>
+      <div class="herramientas">🔧 PRM, SLAM, ROS, Python</div>
+    </div>
+    <div class="doi">
+      <a href="https://doi.org/10.4995/riai.2025.21961" target="_blank">Ver DOI</a>
+    </div>
+  </div>
+
+  <!-- Publicación 2 -->
+  <div class="publicacion">
+    <div class="imagen">
+      <img src="{% static 'perfil/potencial_omno.png' %}" alt="Imagen robot omnidireccional">
+    </div>
+    <div class="contenido">
+      <h3>11/2024: Robot Autónomo Omnidireccional con Evasión de Obstáculos por Campos Potenciales</h3>
+      <p>Implementación de un sistema de navegación basado en campos potenciales para evitar obstáculos en robots con movilidad omnidireccional en entornos dinámicos.</p>
+      <div class="herramientas">🔧 Campos Potenciales, Control, ROS</div>
+    </div>
+    <div class="doi">
+      <a href="https://doi.org/10.1109/COMRob64055.2024.10777460" target="_blank">Ver DOI</a>
+    </div>
+  </div>
+  <!-- Publicación 3 -->
+  <div class="publicacion">
+    <div class="imagen">
+      <img src="{% static 'perfil/redes.png' %}" alt="Imagen CNN">
+    </div>
+    <div class="contenido">
+      <h3>11/2024: Control gestual de robot móvil omnidireccional mediante CNN</h3>
+      <p>Diseño de un sistema de reconocimiento gestual para control de movimiento de un robot usando redes neuronales convolucionales (CNN) aplicadas a visión por computadora.</p>
+      <div class="herramientas">🔧 CNN, OpenCV, Gesture Recognition</div>
+    </div>
+    <div class="doi">
+      <span>Sin DOI disponible</span>
+    </div>
+  </div>
+  <!-- Publicación 4 -->
+  <div class="publicacion">
+    <div class="imagen">
+      <img src="{% static 'perfil/prm.png' %}" alt="Imagen PRM 3 ruedas">
+    </div>
+    <div class="contenido">
+      <h3>11/2024: PRM en Robot Holonómico de Tres Ruedas</h3>
+      <p>Análisis y aplicación del método Probabilistic Roadmap (PRM) en plataformas móviles holonómicas con arquitectura de tres ruedas, evaluando capacidad de planificación.</p>
+      <div class="herramientas">🔧 PRM, Holonómico, Kinematics</div>
+    </div>
+    <div class="doi">
+      <a href="https://doi.org/10.1109/COMRob64055.2024.10777467" target="_blank">Ver DOI</a>
+    </div>
+  </div>
+
+  
+
+  <!-- Publicación 5 -->
+  <div class="publicacion">
+    <div class="imagen">
+      <img src="{% static 'perfil/campos.png' %}" alt="Imagen Campos Potenciales">
+    </div>
+    <div class="contenido">
+      <h3>11/2023: Implementación de Campos Potenciales en Robot Diferencial (TurtleBot2)</h3>
+      <p>Aplicación de algoritmos de campos potenciales en plataformas diferenciales como TurtleBot2 para navegación autónoma y evasión de obstáculos en interiores.</p>
+      <div class="herramientas">🔧 ROS, Python, TurtleBot2</div>
+    </div>
+    <div class="doi">
+      <a href="https://doi.org/10.1109/COMRob60035.2023.10349365" target="_blank">Ver DOI</a>
+    </div>
+  </div>
+
+  <div class="volver">
+    <a href="/">← Volver al perfil</a>
+  </div>
+
+</body>
+</html>
